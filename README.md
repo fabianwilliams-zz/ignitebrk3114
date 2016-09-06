@@ -8,14 +8,13 @@
 1. Xamarin 101 Overview
 2. Office 365 API Overview
 3. Session Goals
-
-..* Extend the reach of Office 365 Data into Mobile. Remember #CloudFirst-MobileFirst
-..* Business Use Case
-..* Xamarin.Forms High Level Walkthrough
+  * Extend the reach of Office 365 Data into Mobile. Remember #CloudFirst-MobileFirst 
+  * Business Use Case 
+  * Xamarin.Forms High Level Walkthrough 
 4.  Project Build out in Visual Studio
-5. Test Test Test
-..* iOS Simulator and actual Device
-..* Windows Universal on Local Device
-..* Android Device
+5. Test Test Test 
+  * iOS Simulator and actual Device 
+  * Windows Universal on Local Device 
+  * Android Device 
 6.  Summary & Questions and Answers
 
