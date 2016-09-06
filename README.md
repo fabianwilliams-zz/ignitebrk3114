@@ -1,7 +1,7 @@
 # Microsoft Ignite 2016 Session BRK 3114 - Fabian Williams
 ### Create cross-platform mobile apps with Xamarin that connect to Office Services
 > Xamarin powers developers to write native applications for iOS, Android, and Microsoft Windows Phone using C#. This session shows you how to use the Microsoft Office 365 APIs in mobile device applications built in these project types to take advantage of the many services in Office 365. 
-
+Session Information: https://myignite.microsoft.com/sessions/3208 
 
 ---
 ## Agenda
