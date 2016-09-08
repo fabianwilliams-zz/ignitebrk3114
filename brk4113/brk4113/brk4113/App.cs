@@ -9,7 +9,7 @@ namespace brk4113
 {
     public class App : Application
     {
-        public static string ClientId = "REDACTED";
+        public static string ClientId = "88c9b486-32ea-469d-9104-d43ba85d0ec2";
         public static string LoginAuthority = "https://login.microsoftonline.com/fabiansworld.onmicrosoft.com";
         public static string ReturnUri = "http://ignite-brk3114-redirect";
         public static string GraphResourceUri = "https://graph.microsoft.com";
@@ -17,20 +17,9 @@ namespace brk4113
 
         public App()
         {
+
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
+            MainPage = new NavigationPage(new View.HomePage());
         }
 
         protected override void OnStart()
