@@ -46,6 +46,7 @@
     <Compile Include="View\HomePage.cs" />
     <Compile Include="View\MailListView.cs" />
     <Compile Include="View\MasterPage.cs" />
+    <Compile Include="View\MyCalendarDetail.cs" />
     <Compile Include="View\UserDetailandCalendar.cs" />
     <Compile Include="View\UserListView.cs" />
   </ItemGroup>

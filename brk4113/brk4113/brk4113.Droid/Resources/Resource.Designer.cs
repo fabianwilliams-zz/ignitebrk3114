@@ -26,6 +26,9 @@ namespace brk4113.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Id.agentWebView = global::brk4113.Droid.Resource.Id.agentWebView;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Layout.WebAuthenticationBroker = global::brk4113.Droid.Resource.Layout.WebAuthenticationBroker;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.String.ApplicationName = global::brk4113.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_in = global::brk4113.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_out = global::brk4113.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_grow_fade_in_from_bottom = global::brk4113.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -3373,6 +3376,9 @@ namespace brk4113.Droid
 			// aapt resource value: 0x7f0b003b
 			public const int activity_chooser_view_content = 2131427387;
 			
+			// aapt resource value: 0x7f0b0081
+			public const int agentWebView = 2131427457;
+			
 			// aapt resource value: 0x7f0b0045
 			public const int alertTitle = 2131427397;
 			
@@ -3899,6 +3905,9 @@ namespace brk4113.Droid
 			
 			// aapt resource value: 0x7f03002f
 			public const int support_simple_spinner_dropdown_item = 2130903087;
+			
+			// aapt resource value: 0x7f030030
+			public const int WebAuthenticationBroker = 2130903088;
 			
 			static Layout()
 			{

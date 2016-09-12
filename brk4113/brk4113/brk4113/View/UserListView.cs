@@ -37,8 +37,9 @@ namespace brk4113.View
 
             listView.ItemSelected += (sender, e) =>
             {
-                
-                Navigation.PushAsync(new UserDetailandCalendar(e.SelectedItem as UsersRequest));
+
+                // Navigation.PushAsync(new UserDetailandCalendar(e.SelectedItem as UsersRequest));
+                RespondToSelectedItemClick(); //For testing only. just want to see if the PushAsync works
             };
         }
 
@@ -56,6 +57,11 @@ namespace brk4113.View
             cell.SetBinding(TextCell.TextProperty, "DisplayName");
             listView.ItemTemplate = cell;
 
+        }
+
+        public async void RespondToSelectedItemClick ()
+        {
+            await Navigation.PushAsync(new UserDetailandCalendar());
         }
 
 

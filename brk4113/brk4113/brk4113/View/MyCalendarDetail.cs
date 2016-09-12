@@ -3,31 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
-using brk4113.Model;
+
 using Xamarin.Forms;
 
 namespace brk4113.View
 {
-    public class UserDetailandCalendar : ContentPage
+    public class MyCalendarDetail : ContentPage
     {
-
-        public UserDetailandCalendar(UsersRequest cuRequest )
+        public MyCalendarDetail(CalendarListView myCal)
         {
-            Title = cuRequest.Value[0].DisplayName;
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Hello" + Title }
+                    new Label { Text = "Hello ContentPage" }
                 }
             };
         }
 
-        public UserDetailandCalendar()
+        public MyCalendarDetail()
         {
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Hello" + Title }
+                    new Label { Text = "Hello ContentPage" }
                 }
             };
         }
