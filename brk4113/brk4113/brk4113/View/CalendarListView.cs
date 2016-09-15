@@ -15,7 +15,6 @@ namespace brk4113.View
     public class CalendarListView : ContentPage
     {
         private ListView listView;
-        public List<CalendarListView> CalList { get; private set; }
         public CalendarListView()
         {
             listView = new ListView

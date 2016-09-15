@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace brk4113.Model
@@ -163,5 +164,10 @@ namespace brk4113.Model
 
         [JsonProperty("value")]
         public Value[] Value { get; set; }
+
+        public static implicit operator List<object>(UsersRequest v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

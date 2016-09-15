@@ -11,23 +11,39 @@ namespace brk4113.View
     public class UserDetailandCalendar : ContentPage
     {
 
-        public UserDetailandCalendar(UsersRequest cuRequest )
+        public UserDetailandCalendar(Value cuRequest )
         {
-            Title = cuRequest.Value[0].DisplayName;
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Hello" + Title }
-                }
-            };
-        }
+            Title = cuRequest.DisplayName;
 
-        public UserDetailandCalendar()
-        {
+            var UserNameLabel = new Label
+            {
+                FontAttributes = FontAttributes.Bold,
+                Text = cuRequest.DisplayName,
+                FontSize = 15
+            };
+
+            var userImage = new Image
+            {
+                Aspect = Aspect.AspectFit,
+                BackgroundColor = Color.Gray
+            };
+
+            var picUrl = "https://graph.windows.net/myorganization/users/" +cuRequest.UserPrincipalName + "/thumbnailPhoto?api-version";
+            if (cuRequest.UserPrincipalName != null)
+            {
+                userImage.Source = ImageSource.FromUri(new Uri(picUrl));
+
+            }
+            else
+            {
+                //giftImage.Source = ImageSource.FromUri(new Uri("https://jailbreakbrewing.com/wp-content/uploads/2015/05/SRM-16"));
+                userImage.Source = "infinite_xhalf.png";
+            }
+
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Hello" + Title }
+                    userImage, UserNameLabel
                 }
             };
         }

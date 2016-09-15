@@ -38,8 +38,8 @@ namespace brk4113.View
             listView.ItemSelected += (sender, e) =>
             {
 
-                // Navigation.PushAsync(new UserDetailandCalendar(e.SelectedItem as UsersRequest));
-                RespondToSelectedItemClick(); //For testing only. just want to see if the PushAsync works
+                Navigation.PushAsync(new UserDetailandCalendar(e.SelectedItem as Value));
+                //RespondToSelectedItemClick(); //For testing only. just want to see if the PushAsync works
             };
         }
 
