@@ -59,11 +59,5 @@ namespace brk4113.View
 
         }
 
-        public async void RespondToSelectedItemClick ()
-        {
-            await Navigation.PushAsync(new UserDetailandCalendar());
-        }
-
-
     }
 }
