@@ -33,7 +33,7 @@ namespace brk4113.View
                 VerticalOptions = LayoutOptions.EndAndExpand,
                 BorderWidth = 2,
                 BorderColor = Color.White,
-                BackgroundColor = Color.Black
+                BackgroundColor = Color.Pink
             };
 
                 submitButton.Clicked += (sender, e) => {

@@ -3376,8 +3376,8 @@ namespace brk4113.Droid
 			// aapt resource value: 0x7f0b003b
 			public const int activity_chooser_view_content = 2131427387;
 			
-			// aapt resource value: 0x7f0b0081
-			public const int agentWebView = 2131427457;
+			// aapt resource value: 0x7f0b0083
+			public const int agentWebView = 2131427459;
 			
 			// aapt resource value: 0x7f0b0045
 			public const int alertTitle = 2131427397;
@@ -3640,6 +3640,9 @@ namespace brk4113.Droid
 			// aapt resource value: 0x7f0b0012
 			public const int showTitle = 2131427346;
 			
+			// aapt resource value: 0x7f0b0081
+			public const int sliding_tabs = 2131427457;
+			
 			// aapt resource value: 0x7f0b0065
 			public const int snackbar_action = 2131427429;
 			
@@ -3696,6 +3699,9 @@ namespace brk4113.Droid
 			
 			// aapt resource value: 0x7f0b0044
 			public const int title_template = 2131427396;
+			
+			// aapt resource value: 0x7f0b0082
+			public const int toolbar = 2131427458;
 			
 			// aapt resource value: 0x7f0b0030
 			public const int top = 2131427376;
@@ -3907,7 +3913,13 @@ namespace brk4113.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int WebAuthenticationBroker = 2130903088;
+			public const int Tabbar = 2130903088;
+			
+			// aapt resource value: 0x7f030031
+			public const int Toolbar = 2130903089;
+			
+			// aapt resource value: 0x7f030032
+			public const int WebAuthenticationBroker = 2130903090;
 			
 			static Layout()
 			{
