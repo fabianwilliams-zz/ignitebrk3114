@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Reflection.Emit;
 using System.Text;
 using brk4113.Model;
-using Newtonsoft.Json;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System.Globalization;
+using System.Reflection;
+using brk4113.Model.Event;
+using brk4113.View.Cells;
 
 namespace brk4113.View
 {
@@ -47,14 +52,39 @@ namespace brk4113.View
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.AuthenticationResult.AccessToken);
-            var response = await client.GetStringAsync("https://graph.microsoft.com/beta/users");
-            var result = JsonConvert.DeserializeObject<UsersRequest>(response);
-            listView.ItemsSource = result.Value;
+            var response = await client.GetStringAsync("https://graph.microsoft.com/beta/me/events");
+            var result = JsonConvert.DeserializeObject<RootObject>(response);
+            listView.ItemsSource = result.value;
             var cell = new DataTemplate(typeof(TextCell));
             //this below will use the default cell properties but will customize it later
-            cell.SetBinding(TextCell.TextProperty, "DisplayName");
+            cell.SetBinding(TextCell.TextProperty, "subject");
+            //cell.SetBinding(TextCell.TextProperty, "organizer.emailAddress.address");
             listView.ItemTemplate = cell;
+            //OK this below is a customized cell that will render more informaiton in 1 row in the List View
+            //listView.ItemTemplate = new DataTemplate(typeof(EventOrgCell)); //this uses my customized cell to make 2 items in 1 row
+            //listView.ItemTemplate = new DataTemplate(typeof(EventNameOrgnAddrCell)); //this uses my customized cell to make 2 items in 1 row
 
+
+        }
+
+        private async void LoadCalendar(Model.Value cuRequest)
+        {
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.AuthenticationResult.AccessToken);
+            //var response = await client.GetStringAsync("https://graph.microsoft.com/beta/users");
+            //var response = await client.GetStringAsync("https://graph.microsoft.com/beta/users/" + cuRequest.UserPrincipalName + "/events");
+            var response = await client.GetStringAsync("https://graph.microsoft.com/beta/me/events");
+            var result = JsonConvert.DeserializeObject<RootObject>(response);
+            listView.ItemsSource = result.value;
+            var cell = new DataTemplate(typeof(TextCell));
+            //this below will use the default cell properties but will customize it later
+            //cell.SetBinding(TextCell.TextProperty, "subject");
+            //cell.SetBinding(TextCell.TextProperty, "organizer.emailAddress.address");
+            //listView.ItemTemplate = cell;
+            //OK this below is a customized cell that will render more informaiton in 1 row in the List View
+            //listView.ItemTemplate = new DataTemplate(typeof(EventOrgCell)); //this uses my customized cell to make 2 items in 1 row
+            listView.ItemTemplate = new DataTemplate(typeof(EventNameOrgnAddrCell)); //this uses my customized cell to make 2 items in 1 row
         }
     }
 }

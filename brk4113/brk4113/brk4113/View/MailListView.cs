@@ -47,12 +47,12 @@ namespace brk4113.View
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.AuthenticationResult.AccessToken);
-            var response = await client.GetStringAsync("https://graph.microsoft.com/beta/users");
-            var result = JsonConvert.DeserializeObject<UsersRequest>(response);
+            var response = await client.GetStringAsync("https://graph.microsoft.com/beta/me/messages");
+            var result = JsonConvert.DeserializeObject<MailResponse>(response);
             listView.ItemsSource = result.Value;
             var cell = new DataTemplate(typeof(TextCell));
             //this below will use the default cell properties but will customize it later
-            cell.SetBinding(TextCell.TextProperty, "DisplayName");
+            cell.SetBinding(TextCell.TextProperty, "Subject");
             listView.ItemTemplate = cell;
 
         }

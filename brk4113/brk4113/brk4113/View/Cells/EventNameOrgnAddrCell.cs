@@ -16,7 +16,7 @@ namespace brk4113.View.Cells
             var OrganizerNameLabel = new Label
             {
 
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
+                Font = Font.SystemFontOfSize(NamedSize.Micro)
             };
             OrganizerNameLabel.SetBinding(Label.TextProperty, new Binding("subject"));
 
@@ -38,22 +38,25 @@ namespace brk4113.View.Cells
 
             var nameLabel = new Label
             {
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Font = Font.SystemFontOfSize(NamedSize.Small),
+                FontAttributes = FontAttributes.Bold,
+                HorizontalOptions = LayoutOptions.EndAndExpand
             };
             nameLabel.SetBinding(Label.TextProperty, "organizer.emailAddress.name");
 
 
             var emailaddrLabel = new Label
             {
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                Font = Font.SystemFontOfSize(NamedSize.Micro),
+                HorizontalOptions = LayoutOptions.EndAndExpand
             };
             emailaddrLabel.SetBinding(Label.TextProperty, "organizer.emailAddress.address");
 
             var nameLayout = new StackLayout()
             {
-                //HorizontalOptions = LayoutOptions.StartAndExpand,
+                HorizontalOptions = LayoutOptions.EndAndExpand,
                 Orientation = StackOrientation.Vertical,
-                Children = { nameLabel }
+                Children = { nameLabel, emailaddrLabel }
             };
             return nameLayout;
         }
