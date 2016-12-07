@@ -49,7 +49,7 @@ namespace brk4113.View
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.AuthenticationResult.AccessToken);
-            var response = await client.GetStringAsync("https://graph.microsoft.com/v1.0/users");
+            var response = await client.GetStringAsync("https://graph.microsoft.com/beta/me/people");
             var result = JsonConvert.DeserializeObject<UsersRequest>(response);
             listView.ItemsSource = result.Value;
             var cell = new DataTemplate(typeof(TextCell));
